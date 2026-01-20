@@ -31,14 +31,24 @@ CHECK_INTERVAL_SECONDS = 30 * 60  # Check every 30 minutes
 TOUR_URL = "https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/"
 
 # --- Email Configuration ---
-EMAIL_FROM = "spenceroberst@gmail.com"
+# STARTUP: Email config is now pulled from environment variables for privacy
+EMAIL_FROM = os.environ.get("EMAIL_FROM")
+EMAIL_TO = os.environ.get("EMAIL_TO")
+
+# Fallback for local testing if env vars aren't set (warn user if missing)
+if not EMAIL_FROM:
+    logging.warning("EMAIL_FROM not set in environment variables. Emailing will fail.")
+if not EMAIL_TO:
+     # Default to sending to self if TO is not set
+    EMAIL_TO = EMAIL_FROM
+
 # STARTUP: We check for the password in the environment variables (for GitHub Actions)
 # faster and safer than hardcoding it.
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD") 
 if not EMAIL_PASSWORD:
-    # Fallback for local testing if you haven't set the env var
-    EMAIL_PASSWORD = "ithv wzux wfow aumw" 
-EMAIL_TO = "spenceroberst@gmail.com"  # Sending to self by default
+    # Only use this fallback if you possess the file locally and know it's safe
+    # But since we are going public, we remove the hardcoded password entirely or make it blank.
+    EMAIL_PASSWORD = ""
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
