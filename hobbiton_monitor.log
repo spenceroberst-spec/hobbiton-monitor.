@@ -1,0 +1,98 @@
+2026-01-07 22:46:02,728 - INFO - ============================================================
+2026-01-07 22:46:02,728 - INFO - Hobbiton Monitor v2.0 Started
+2026-01-07 22:46:02,728 - INFO - Checking https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:46:02,728 - INFO - Date: 2025-02-16
+2026-01-07 22:46:02,729 - INFO - Email Configured: NO (Please set password)
+2026-01-07 22:46:02,729 - INFO - ============================================================
+2026-01-07 22:46:02,729 - INFO - ====== WebDriver manager ======
+2026-01-07 22:46:03,014 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:46:03,199 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:46:03,305 - INFO - There is no [mac64] chromedriver "143.0.7499.192" for browser google-chrome "143.0.7499" in cache
+2026-01-07 22:46:03,316 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:46:03,755 - INFO - WebDriver version 143.0.7499.192 selected
+2026-01-07 22:46:03,764 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/143.0.7499.192/mac-x64/chromedriver-mac-x64.zip
+2026-01-07 22:46:03,765 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/143.0.7499.192/mac-x64/chromedriver-mac-x64.zip
+2026-01-07 22:46:03,893 - INFO - Driver downloading response is 200
+2026-01-07 22:46:04,255 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:46:04,503 - INFO - Driver has been saved in cache [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192]
+2026-01-07 22:46:07,073 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:46:36,724 - INFO - Attempting to select date: 16/02/2025
+2026-01-07 22:46:36,726 - ERROR - Error during check: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2026-01-07 22:46:36,731 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef/screenshot
+2026-01-07 22:46:36,733 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef/screenshot
+2026-01-07 22:46:36,737 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef/screenshot
+2026-01-07 22:46:36,741 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef
+2026-01-07 22:46:36,742 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef
+2026-01-07 22:46:36,748 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64211): Failed to establish a new connection: [Errno 61] Connection refused")': /session/947df571c0edad36e6db5e454532efef
+2026-01-07 22:50:31,318 - INFO - ============================================================
+2026-01-07 22:50:31,319 - INFO - Hobbiton Monitor v2.0 Started
+2026-01-07 22:50:31,319 - INFO - Checking https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:50:31,319 - INFO - Date: 2025-02-16
+2026-01-07 22:50:31,319 - INFO - Email Configured: Yes
+2026-01-07 22:50:31,319 - INFO - ============================================================
+2026-01-07 22:50:31,320 - INFO - ====== WebDriver manager ======
+2026-01-07 22:50:31,711 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:50:31,828 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:50:31,933 - INFO - Driver [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192/chromedriver-mac-x64/chromedriver] found in cache
+2026-01-07 22:50:33,899 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:51:08,177 - INFO - Attempting to select date: 16/02/2025
+2026-01-07 22:51:29,560 - ERROR - Error during check: Message: 
+
+2026-01-07 22:51:30,107 - INFO - Sleeping for 1800 seconds...
+2026-01-07 22:59:29,903 - INFO - ============================================================
+2026-01-07 22:59:29,903 - INFO - Hobbiton Monitor v2.0 Started
+2026-01-07 22:59:29,904 - INFO - Checking https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:59:29,904 - INFO - Date: 2025-02-16
+2026-01-07 22:59:29,904 - INFO - Email Configured: Yes
+2026-01-07 22:59:29,904 - INFO - ============================================================
+2026-01-07 22:59:29,904 - INFO - ====== WebDriver manager ======
+2026-01-07 22:59:30,273 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:59:30,381 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 22:59:30,465 - INFO - Driver [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192/chromedriver-mac-x64/chromedriver] found in cache
+2026-01-07 22:59:32,485 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 22:59:47,142 - INFO - Accepted cookies
+2026-01-07 22:59:49,158 - INFO - Attempting to select date: 16/02/2025
+2026-01-07 22:59:50,789 - INFO - Clicked Check Availability button
+2026-01-07 22:59:56,422 - INFO - Status: POTENTIAL AVAILABILITY FOUND!
+2026-01-07 22:59:56,627 - INFO - Sleeping for 1800 seconds...
+2026-01-07 23:10:08,574 - INFO - ============================================================
+2026-01-07 23:10:08,575 - INFO - Hobbiton Monitor v2.0 Started
+2026-01-07 23:10:08,575 - INFO - Checking https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 23:10:08,575 - INFO - Date: 2025-02-16
+2026-01-07 23:10:08,576 - INFO - Email Configured: Yes
+2026-01-07 23:10:08,576 - INFO - ============================================================
+2026-01-07 23:10:08,576 - INFO - ====== WebDriver manager ======
+2026-01-07 23:10:09,061 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 23:10:09,205 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-07 23:10:09,312 - INFO - Driver [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192/chromedriver-mac-x64/chromedriver] found in cache
+2026-01-07 23:10:13,480 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-07 23:10:28,142 - INFO - Accepted cookies
+2026-01-07 23:10:30,190 - INFO - Attempting to select date: 16/02/2025
+2026-01-07 23:10:31,820 - INFO - Clicked Check Availability button
+2026-01-07 23:10:36,992 - INFO - Status: SOLD OUT for 2025-02-16 (Confirmed 'Fully Booked')
+2026-01-07 23:10:37,958 - INFO - Sleeping for 1800 seconds...
+2026-01-19 18:46:33,210 - INFO - ====== WebDriver manager ======
+2026-01-19 18:46:33,575 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:46:33,930 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:46:34,051 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:46:34,536 - INFO - WebDriver version 143.0.7499.192 selected
+2026-01-19 18:46:34,545 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/143.0.7499.192/mac-x64/chromedriver-mac-x64.zip
+2026-01-19 18:46:34,546 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/143.0.7499.192/mac-x64/chromedriver-mac-x64.zip
+2026-01-19 18:46:34,691 - INFO - Driver downloading response is 200
+2026-01-19 18:46:35,007 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:46:35,300 - INFO - Driver has been saved in cache [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192]
+2026-01-19 18:46:37,871 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-19 18:46:44,860 - INFO - Accepted cookies
+2026-01-19 18:46:46,879 - INFO - Attempting to select date: 16/02/2025
+2026-01-19 18:46:48,683 - INFO - Clicked Check Availability button
+2026-01-19 18:46:53,731 - INFO - Status: SOLD OUT for 2025-02-16 (Confirmed 'Fully Booked')
+2026-01-19 18:48:29,148 - INFO - Email notification sent successfully to spenceroberst@gmail.com
+2026-01-19 18:49:05,098 - INFO - ====== WebDriver manager ======
+2026-01-19 18:49:05,399 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:49:05,510 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 18:49:05,617 - INFO - Driver [/Users/spenceroberst/.wdm/drivers/chromedriver/mac64/143.0.7499.192/chromedriver-mac-x64/chromedriver] found in cache
+2026-01-19 18:49:07,200 - INFO - Navigating to https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/
+2026-01-19 18:49:12,385 - INFO - Accepted cookies
+2026-01-19 18:49:14,431 - INFO - Attempting to select date: 16/02/2026
+2026-01-19 18:49:16,069 - INFO - Clicked Check Availability button
+2026-01-19 18:49:21,121 - INFO - Status: SOLD OUT for 2026-02-16 (Confirmed 'Fully Booked')

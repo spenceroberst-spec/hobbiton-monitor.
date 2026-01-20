@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.hobbitontours.com)",
+      "WebFetch(domain:bookings.hobbitontours.com)"
+    ]
+  }
+}
