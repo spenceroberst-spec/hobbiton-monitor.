@@ -24,8 +24,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import os  # Added for environment variables
 
 # --- Configuration ---
-TARGET_DATE_STR = "16/02/2026"  # DD/MM/YYYY format for the website
-TARGET_DATE_LOG = "2026-02-16"
+TARGET_DATES = ["13/02/2026", "16/02/2026"]  # DD/MM/YYYY format for the website
 NUM_PEOPLE = 2
 CHECK_INTERVAL_SECONDS = 30 * 60  # Check every 30 minutes
 TOUR_URL = "https://www.hobbitontours.com/experiences/hobbiton-movie-set-tour/"
@@ -89,8 +88,12 @@ def send_email_notification(subject, message):
         logging.error(f"Failed to send email: {str(e)}")
         return False
 
-def check_availability():
+def check_availability(target_date_str):
     """Check Hobbiton Tours website for availability"""
+    # Create log format YYYY-MM-DD
+    parts = target_date_str.split('/')
+    target_date_log = f"{parts[2]}-{parts[1]}-{parts[0]}"
+
     driver = None
     try:
         # 1. Setup Driver
@@ -128,14 +131,14 @@ def check_availability():
         time.sleep(1)
 
         # 5. Fill Booking Form
-        logging.info(f"Attempting to select date: {TARGET_DATE_STR}")
+        logging.info(f"Attempting to select date: {target_date_str}")
         
         # Use Javascript to set the date directly
         # Debugging showed the input has class 'js-datepicker'
         js_set_date = f"""
         var dateInput = document.querySelector('.js-datepicker');
         if (dateInput) {{
-            dateInput.value = '{TARGET_DATE_STR}';
+            dateInput.value = '{target_date_str}';
             dateInput.dispatchEvent(new Event('change', {{ bubbles: true }}));
             dateInput.dispatchEvent(new Event('input', {{ bubbles: true }}));
             return true;
@@ -179,7 +182,7 @@ def check_availability():
         # The browser subagent found: <div class="standard-fee unavailable">...Fully Booked...</div>
         
         if "fully booked" in page_source or "no availability" in page_source:
-             logging.info(f"Status: SOLD OUT for {TARGET_DATE_LOG} (Confirmed 'Fully Booked')")
+             logging.info(f"Status: SOLD OUT for {target_date_log} (Confirmed 'Fully Booked')")
              # Take a screenshot to prove it
              driver.save_screenshot('debug_sold_out.png')
              return False
@@ -195,7 +198,7 @@ def check_availability():
              
         # Fallback check
         if "we do not have any tours available" in page_source:
-             logging.info(f"Status: SOLD OUT for {TARGET_DATE_LOG} (No tours message)")
+             logging.info(f"Status: SOLD OUT for {target_date_log} (No tours message)")
              return False
 
         logging.warning("Status: Unsure. Page content ambiguous. Check 'debug_last_check.png'.")
@@ -218,12 +221,13 @@ def main():
     logging.info("="*60)
     logging.info("Hobbiton Monitor v2.0 Started")
     logging.info(f"Checking {TOUR_URL}")
-    logging.info(f"Date: {TARGET_DATE_LOG}")
+    logging.info(f"Dates: {TARGET_DATES}")
     logging.info(f"Email Configured: {'Yes' if 'YOUR_APP_PASSWORD' not in EMAIL_PASSWORD else 'NO (Please set password)'}")
     logging.info("="*60)
     
     # Run once immediately
-    check_availability()
+    for date_str in TARGET_DATES:
+        check_availability(date_str)
     
     # Loop
     while True:
@@ -237,15 +241,14 @@ def main():
         logging.info(f"Sleeping for {CHECK_INTERVAL_SECONDS} seconds...")
         time.sleep(CHECK_INTERVAL_SECONDS)
         
-        is_available = check_availability()
-        
-        if is_available:
-            send_email_notification(
-                "🎉 HOBBITON ALERT: Tickets Available!",
-                f"Found availability for {TARGET_DATE_LOG}!\nCheck immediately: {TOUR_URL}"
-            )
-            # You might want to break here or keep notifying? 
-            # Often good to keep notifying but maybe slow down. For now we continue at same rate.
+        for date_str in TARGET_DATES:
+            is_available = check_availability(date_str)
+            
+            if is_available:
+                send_email_notification(
+                    "🎉 HOBBITON ALERT: Tickets Available!",
+                    f"Found availability for {date_str}!\nCheck immediately: {TOUR_URL}"
+                )
 
 if __name__ == "__main__":
     main()
