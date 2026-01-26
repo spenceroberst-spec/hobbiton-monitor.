@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Hobbiton Tours Availability Monitor
-Checks for tour availability on February 16, 2025 for 2 people
+Checks for tour availability on February 13 and 16, 2026 for 2 people
 Sends email notification when tickets become available
 """
 
