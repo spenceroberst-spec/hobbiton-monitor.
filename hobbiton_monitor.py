@@ -99,7 +99,7 @@ def check_availability(target_date_str):
         # 1. Setup Driver
         options = webdriver.ChromeOptions()
         # Keep headless option for background running, but useful to comment out for debug
-        options.add_argument('--headless') 
+        options.add_argument('--headless=new') 
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-blink-features=AutomationControlled')
@@ -108,6 +108,10 @@ def check_availability(target_date_str):
         
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
+        
+        # Set strict timeouts to prevent hanging
+        driver.set_page_load_timeout(30)
+        driver.set_script_timeout(30)
         
         # 2. Navigate to Tour Page
         logging.info(f"Navigating to {TOUR_URL}")
